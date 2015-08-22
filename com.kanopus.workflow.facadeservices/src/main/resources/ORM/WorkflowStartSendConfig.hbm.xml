@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 13, 2015 10:58:18 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.kanopus.workflow.workflowfacade.entities.WorkflowStartSendConfig" table="workflow_start_send_config" catalog="workflowfacade">
+        <id name="variableId" type="int">
+            <column name="VARIABLE_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="workflowProcessId" type="string">
+            <column name="WORKFLOW_PROCESS_ID" length="100" />
+        </property>
+        <property name="variableName" type="string">
+            <column name="VARIABLE_NAME" length="45" not-null="true" />
+        </property>
+        <property name="variableDatatype" type="string">
+            <column name="VARIABLE_DATATYPE" length="100" not-null="true" />
+        </property>
+        <property name="varAdditonalObjtypename" type="string">
+            <column name="VAR_ADDITONAL_OBJTYPENAME" length="100" />
+        </property>
+        <property name="varSerializationDataformat" type="string">
+            <column name="VAR_SERIALIZATION_DATAFORMAT" length="45" />
+        </property>
+        <property name="parentVarId" type="java.lang.Integer">
+            <column name="PARENT_VAR_ID" />
+        </property>
+        <property name="isMandatory" type="boolean">
+            <column name="IS_MANDATORY" not-null="true" />
+        </property>
+        <property name="isStart" type="boolean">
+            <column name="IS_START" not-null="true" />
+        </property>
+        <property name="isSendmessage" type="boolean">
+            <column name="IS_SENDMESSAGE" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

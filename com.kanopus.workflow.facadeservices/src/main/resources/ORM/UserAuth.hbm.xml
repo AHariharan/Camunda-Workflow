@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 13, 2015 10:58:18 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.kanopus.workflow.workflowfacade.entities.UserAuth" table="user_auth" catalog="workflowfacade">
+        <id name="id" type="string">
+            <column name="ID" length="45" />
+            <generator class="foreign">
+                <param name="property">userRole</param>
+            </generator>
+        </id>
+        <property name="emailAddress" type="string">
+            <column name="EMAIL_ADDRESS" length="45" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="100" />
+        </property>
+        <property name="workflowRefUserid" type="string">
+            <column name="WORKFLOW_REF_USERID" length="45" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="IS_ACTIVE" />
+        </property>
+        <property name="isExpired" type="java.lang.Boolean">
+            <column name="IS_EXPIRED" />
+        </property>
+        <property name="isSuspended" type="java.lang.Boolean">
+            <column name="IS_SUSPENDED" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CREATED_DATE" length="19" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UPDATED_DATE" length="19" />
+        </property>
+        <property name="isAuthorizationOnly" type="java.lang.Boolean">
+            <column name="IS_AUTHORIZATION_ONLY" />
+        </property>
+    </class>
+</hibernate-mapping>

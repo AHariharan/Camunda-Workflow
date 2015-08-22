@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 13, 2015 10:58:18 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.kanopus.workflow.workflowfacade.entities.ManagedWorkflows" table="managed_workflows" catalog="workflowfacade">
+        <id name="workflowProcessId" type="string">
+            <column name="WORKFLOW_PROCESS_ID" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="workflowName" type="string">
+            <column name="WORKFLOW_NAME" length="100" />
+        </property>
+        <property name="businesskeyPrefix" type="string">
+            <column name="BUSINESSKEY_PREFIX" length="45" />
+        </property>
+        <property name="businesskeySuffix" type="string">
+            <column name="BUSINESSKEY_SUFFIX" length="45" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CREATED_DATE" length="19" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UPDATED_DATE" length="19" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 13, 2015 10:58:18 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.kanopus.workflow.workflowfacade.entities.RolePrevilige" table="role_previlige" catalog="workflowfacade">
+        <id name="roleCde" type="string">
+            <column name="ROLE_CDE" length="10" />
+            <generator class="foreign">
+                <param name="property">roleMaster</param>
+            </generator>
+        </id>
+        <property name="canStartCase" type="boolean">
+            <column name="CAN_START_CASE" not-null="true" />
+        </property>
+        <property name="canSendMessage" type="boolean">
+            <column name="CAN_SEND_MESSAGE" not-null="true" />
+        </property>
+        <property name="canClaimTask" type="boolean">
+            <column name="CAN_CLAIM_TASK" not-null="true" />
+        </property>
+        <property name="canViewonlyTask" type="boolean">
+            <column name="CAN_VIEWONLY_TASK" not-null="true" />
+        </property>
+        <property name="canSearchTask" type="boolean">
+            <column name="CAN_SEARCH_TASK" not-null="true" />
+        </property>
+        <property name="canPurgeCase" type="boolean">
+            <column name="CAN_PURGE_CASE" not-null="true" />
+        </property>
+        <property name="canSuspendCase" type="boolean">
+            <column name="CAN_SUSPEND_CASE" not-null="true" />
+        </property>
+        <property name="canParticipateCase" type="boolean">
+            <column name="CAN_PARTICIPATE_CASE" not-null="true" />
+        </property>
+        <property name="canSeeReports" type="boolean">
+            <column name="CAN_SEE_REPORTS" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
