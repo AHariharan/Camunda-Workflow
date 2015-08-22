@@ -1,3 +1,12 @@
-C:\CamundaWorkspace\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\exceptions\WorkflowEngineConfigException.java
-C:\CamundaWorkspace\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\uiservices\schemas\GetLoginInfoRequest.java
-C:\CamundaWorkspace\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\uiservices\schemas\GetLoginInfoResponse.java
+F:\Eclipse Workspace\OpenSourceWorkflow\OpenSourceWorkflow\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\workflowfacade\entities\WorkflowStartSendConfig.java
+F:\Eclipse Workspace\OpenSourceWorkflow\OpenSourceWorkflow\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\uiservices\schemas\GetLoginInfoResponse.java
+F:\Eclipse Workspace\OpenSourceWorkflow\OpenSourceWorkflow\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\exceptions\WorkflowEngineConfigException.java
+F:\Eclipse Workspace\OpenSourceWorkflow\OpenSourceWorkflow\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\workflowfacade\entities\WorkflowTaskBusinessFieldConfig.java
+F:\Eclipse Workspace\OpenSourceWorkflow\OpenSourceWorkflow\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\workflowfacade\entities\UserAuth.java
+F:\Eclipse Workspace\OpenSourceWorkflow\OpenSourceWorkflow\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\workflowfacade\entities\WorkflowRoleConfig.java
+F:\Eclipse Workspace\OpenSourceWorkflow\OpenSourceWorkflow\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\uiservices\schemas\GetLoginInfoRequest.java
+F:\Eclipse Workspace\OpenSourceWorkflow\OpenSourceWorkflow\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\workflowfacade\entities\RolePrevilige.java
+F:\Eclipse Workspace\OpenSourceWorkflow\OpenSourceWorkflow\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\workflowfacade\entities\WorkflowRoleConfigId.java
+F:\Eclipse Workspace\OpenSourceWorkflow\OpenSourceWorkflow\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\workflowfacade\entities\ManagedWorkflows.java
+F:\Eclipse Workspace\OpenSourceWorkflow\OpenSourceWorkflow\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\workflowfacade\entities\RoleMaster.java
+F:\Eclipse Workspace\OpenSourceWorkflow\OpenSourceWorkflow\com.kanopus.workflow.models\src\main\java\com\kanopus\workflow\workflowfacade\entities\UserRole.java
