@@ -6,9 +6,7 @@
     <class name="com.kanopus.workflow.workflowfacade.entities.RolePrevilige" table="role_previlige" catalog="workflowfacade">
         <id name="roleCde" type="string">
             <column name="ROLE_CDE" length="10" />
-            <generator class="foreign">
-                <param name="property">roleMaster</param>
-            </generator>
+            <generator class="assigned" />
         </id>
         <property name="canStartCase" type="boolean">
             <column name="CAN_START_CASE" not-null="true" />

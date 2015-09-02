@@ -6,9 +6,7 @@
     <class name="com.kanopus.workflow.workflowfacade.entities.UserAuth" table="user_auth" catalog="workflowfacade">
         <id name="id" type="string">
             <column name="ID" length="45" />
-            <generator class="foreign">
-                <param name="property">userRole</param>
-            </generator>
+            <generator class="assigned"></generator>
         </id>
         <property name="emailAddress" type="string">
             <column name="EMAIL_ADDRESS" length="45" />

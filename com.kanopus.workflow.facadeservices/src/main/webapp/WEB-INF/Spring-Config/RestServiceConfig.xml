@@ -19,15 +19,17 @@
 	
 	<context:component-scan base-package="com.kanopus.workflow.facadeservices.controllers">
 	</context:component-scan>
+	<context:property-placeholder
+		location="WEB-INF/Spring-Config/DBConfig.properties" />
 	
 	<bean id="dataSource"
-		class="org.apache.commons.dbcp2.BasicDataSource"
+		class="com.kanopus.workflow.encrypt.utilities.EncryptResolverDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://localhost/workflowfacade" />
-		<property name="username" value="root" />
-		<property name="password" value="mysql" />
+			value="jdbc:mysql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_SCHEMA}" />
+		<property name="username" value="${DATABASE_USER}" />
+		<property name="password" value="${DATABASE_PASSWORD}" />
 	</bean>
 	
 	<bean id="sessionFactory"
@@ -63,6 +65,11 @@
 	
 	<bean id="mngWorkflowDao"
 		class="com.kanopus.workflow.facadeservices.dao.ManageWorkflowDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="mngFacadeDao"
+		class="com.kanopus.workflow.facadeservices.dao.ManageFacadeDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	

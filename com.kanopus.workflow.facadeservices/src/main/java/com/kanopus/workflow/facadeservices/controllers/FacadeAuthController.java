@@ -49,8 +49,6 @@ public class FacadeAuthController {
 		return wfDetailsResp;
 	}
 	
-	
-	
 	@ExceptionHandler
 	public String handleBadRequest(Exception ex,HttpServletRequest request)
 	{

@@ -32,12 +32,25 @@ public class UserAuth implements java.io.Serializable {
 //	public UserAuth(UserRole userRole) {
 //		this.userRole = userRole;
 //	}
+	
+	public UserAuth(String id, String emailAddress, String password,
+			String workflowRefUserid, Boolean isActive, Boolean isExpired,
+			Boolean isSuspended, Boolean isAuthorizationOnly) {
+		this.id = id;
+		this.emailAddress = emailAddress;
+		this.password = password;
+		this.workflowRefUserid = workflowRefUserid;
+		this.isActive = isActive;
+		this.isExpired = isExpired;
+		this.isSuspended = isSuspended;
+		this.isAuthorizationOnly = isAuthorizationOnly;
+	}
 
-	public UserAuth(String emailAddress, String password,
+	public UserAuth(String id, String emailAddress, String password,
 			String workflowRefUserid, Boolean isActive, Boolean isExpired,
 			Boolean isSuspended, Date createdDate, Date updatedDate,
 			Boolean isAuthorizationOnly) {
-//		this.userRole = userRole;
+		this.id = id;
 		this.emailAddress = emailAddress;
 		this.password = password;
 		this.workflowRefUserid = workflowRefUserid;

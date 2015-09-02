@@ -32,8 +32,8 @@
 		</dependency>
 		<dependency>
 			<groupId>com.kanopus.workflow</groupId>
-			<artifactId>com.kanopus.workflow.model</artifactId>
-			<version>1.0</version>
+			<artifactId>com.kanopus.workflow.models</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<build>

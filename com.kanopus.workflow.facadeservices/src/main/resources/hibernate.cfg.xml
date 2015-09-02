@@ -5,9 +5,10 @@
 <hibernate-configuration>
     <session-factory name="sessionfactory">
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">mysql</property>
+        <property name="hibernate.connection.password">wfK@nopu5</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost/workflowfacade</property>
-        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.username">workflow</property>
+        <property name="hibernate.default_schema">workflowfacade</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     </session-factory>
 </hibernate-configuration>

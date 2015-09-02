@@ -60,6 +60,11 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.8.Final</version>
 		</dependency>
+		<dependency>
+			<groupId>org.jasypt</groupId>
+			<artifactId>jasypt</artifactId>
+			<version>1.9.2</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.kanopus.workflow</groupId>
