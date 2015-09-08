@@ -68,11 +68,17 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
-	<bean id="mngFacadeDao"
-		class="com.kanopus.workflow.facadeservices.dao.ManageFacadeDaoImpl">
+	<bean id="mngRoleDao"
+		class="com.kanopus.workflow.facadeservices.dao.ManageRoleDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
+	<bean id="mngUserDao"
+		class="com.kanopus.workflow.facadeservices.dao.ManageUserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+
 	<tx:annotation-driven />
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">

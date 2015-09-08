@@ -1,0 +1,31 @@
+{
+	"id": "dcd27af6-5674-ffac-fbb0-8bf6acf2a27d",
+	"name": "WorkflowDetailsRequest",
+	"requests": [
+		{
+			"id": "2f4aba80-3002-602b-21af-6da7d10692be",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/workflow-facadeservices/facaderestservice/workflowdetails",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "dcd27af6-5674-ffac-fbb0-8bf6acf2a27d",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/workflow-facadeservices/facaderestservice/workflowdetails",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1440424247440,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"workflowProcessId\": \"WF_001\"\n}"
+		}
+	],
+	"order": [
+		"2f4aba80-3002-602b-21af-6da7d10692be"
+	],
+	"timestamp": 1440424247441
+}

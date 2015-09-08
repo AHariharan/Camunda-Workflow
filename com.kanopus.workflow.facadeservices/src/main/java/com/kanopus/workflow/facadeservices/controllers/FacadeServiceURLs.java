@@ -13,5 +13,8 @@ public class FacadeServiceURLs {
 	
 	// ManageFacadeController
 	public final static String CREATE_ROLE = "/createrole";
+	public final static String CREATE_USER = "/createuser";
+	public final static String CREATE_WORKFLOW = "/createworkflow";
+	
 	
 }

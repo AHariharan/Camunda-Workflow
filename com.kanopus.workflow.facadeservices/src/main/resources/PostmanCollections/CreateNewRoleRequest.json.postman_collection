@@ -1,0 +1,31 @@
+{
+	"id": "033bc62a-a2ef-9336-3207-91821f9f385a",
+	"name": "CreateNewRoleRequest",
+	"requests": [
+		{
+			"id": "db5f4c52-7396-c373-8d36-a6f9fbd72e51",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/workflow-facadeservices/facaderestservice/createrole",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "033bc62a-a2ef-9336-3207-91821f9f385a",
+			"data": [],
+			"dataMode": "raw",
+			"name": "createNewRequest",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1441256112541,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"roleCde\": \"DataEntry\",\n    \"roleDesc\": \"Data entry team\",\n    \"canStartCase\": true,\n    \"canSendMessage\": true,\n    \"canClaimTask\": true,\n    \"canViewonlyTask\": false,\n    \"canSearchTask\": true,\n    \"canPurgeCase\": false,\n    \"canSuspendCase\": false,\n    \"canParticipateCase\": false,\n    \"canSeeReports\": false\n}"
+		}
+	],
+	"order": [
+		"db5f4c52-7396-c373-8d36-a6f9fbd72e51"
+	],
+	"timestamp": 1441256112541
+}

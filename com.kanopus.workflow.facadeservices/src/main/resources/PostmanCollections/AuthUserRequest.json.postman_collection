@@ -1,0 +1,35 @@
+{
+	"id": "a1b0abfd-4131-985f-84c1-fad943c3b4cd",
+	"name": "AuthUserRequest",
+	"description": "{\n    \"userId\": \"1\"\n}",
+	"order": [
+		"d0babda9-ee0a-3879-9b7b-8063675067b2"
+	],
+	"folders": [],
+	"timestamp": 1440242220926,
+	"owner": "",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "d0babda9-ee0a-3879-9b7b-8063675067b2",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/workflow-facadeservices/facaderestservice/workflowdetails",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1440258404085,
+			"name": "AuthUserRequest",
+			"description": "{\n    \"userId\": \"2\"\n}",
+			"collectionId": "a1b0abfd-4131-985f-84c1-fad943c3b4cd",
+			"responses": [],
+			"rawModeData": "{\n    \"workflowProcessId\": \"WF_001\"\n}"
+		}
+	]
+}

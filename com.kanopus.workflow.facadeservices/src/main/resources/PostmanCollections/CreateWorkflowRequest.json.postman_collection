@@ -1,0 +1,31 @@
+{
+	"id": "b4a62c76-9067-427d-e770-246ae1382014",
+	"name": "CreateWorkflowRequest",
+	"requests": [
+		{
+			"id": "7e8e3dd7-7f33-aaed-62d4-9e1e40142c18",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/workflow-facadeservices/facaderestservice/createworkflow",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "b4a62c76-9067-427d-e770-246ae1382014",
+			"data": [],
+			"dataMode": "raw",
+			"name": "createworkflow",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1441702789777,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"workflowProcessId\": \"WF_004\",\n    \"workflowName\": \"Test Batch Process\",\n    \"businesskeyPrefix\": \"TBT\",\n    \"rolesList\": [\n        {\n            \"roleCde\": \"USER\",\n            \"canStartInstance\": false,\n            \"canSendMessage\": false\n        },\n        {\n            \"roleCde\": \"ADMIN\",\n            \"canStartInstance\": true,\n            \"canSendMessage\": true\n        }\n    ],\n    \"tasksList\": [\n        {\n            \"taskName\": \"BatchTask_1\",\n            \"fieldName\": \"Field_1\",\n            \"fieldDatatype\": \"Integer\"\n        },\n        {\n            \n            \"taskName\": \"BatchTask_1\",\n            \"fieldName\": \"Field_2\",\n            \"fieldDatatype\": \"String\",\n            \"fieldDefaultValue\": \"Test\"\n        },\n        {\n            \n            \"taskName\": \"BatchTask_2\",\n            \"fieldName\": \"Field_3\",\n            \"fieldDatatype\": \"Double\"\n        },\n        {\n            \n            \"taskName\": \"BatchTask_2\",\n            \"fieldName\": \"Field_4\",\n            \"fieldDatatype\": \"String\",\n            \"fieldDefaultValue\": \"Test_2\"\n        }\n        \n    ],\n    \"startSendList\": [\n        {\n            \"variableId\": \"1\",\n            \"variableName\": \"VAR_NAME_01\",\n            \"variableDatatype\": \"String\",\n            \"isMandatory\": true,\n            \"isStart\": false,\n            \"isSendMessage\": false\n        }\n    ]\n    \n}"
+		}
+	],
+	"order": [
+		"7e8e3dd7-7f33-aaed-62d4-9e1e40142c18"
+	],
+	"timestamp": 1441702789778
+}

@@ -4,20 +4,16 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 
-import com.kanopus.workflow.facadeservices.restschemas.NewRoleRequest;
-import com.kanopus.workflow.facadeservices.restschemas.NewRoleResponse;
 import com.kanopus.workflow.facadeservices.restschemas.NewUserRequest;
 import com.kanopus.workflow.facadeservices.restschemas.NewUserResponse;
-import com.kanopus.workflow.workflowfacade.entities.RoleMaster;
-import com.kanopus.workflow.workflowfacade.entities.RolePrevilige;
 import com.kanopus.workflow.workflowfacade.entities.UserAuth;
 import com.kanopus.workflow.workflowfacade.entities.UserRole;
 
-public class ManageFacadeDaoImpl implements ManageFacadeDao {
+public class ManageUserDaoImpl implements ManageUserDao {
 
 	private SessionFactory sessionFactory;
 	
-	public ManageFacadeDaoImpl() {
+	public ManageUserDaoImpl() {
 		super();
 	}
 	
@@ -29,53 +25,27 @@ public class ManageFacadeDaoImpl implements ManageFacadeDao {
 		this.sessionFactory = sessionFactory;
 	}
 	
-	@SuppressWarnings("unchecked")
-	public NewRoleResponse createNewRole(NewRoleRequest roleReq) {
 		
-		NewRoleResponse roleResp = new NewRoleResponse();
-		roleResp.setRoleCde(roleReq.getRoleCde());
-		try {
-			List<RoleMaster> roleList = sessionFactory.getCurrentSession()
-					.createQuery("from RoleMaster where id.roleCde = :var_roleCde")
-			    	.setString("var_roleCde", roleReq.getRoleCde())
-			    	.list();
-			if(roleList.size() > 0) {
-				roleResp.setResponseMsg("Role Already Exists");
-				return roleResp;
-			}
-			RoleMaster roleMaster = new RoleMaster(roleReq.getRoleCde(), roleReq.getRoleDesc());
-			RolePrevilige rolePrev = new RolePrevilige(roleReq.getRoleCde(), roleReq.isCanStartCase(),
-											roleReq.isCanSendMessage(), roleReq.isCanClaimTask(),
-											roleReq.isCanViewonlyTask(), roleReq.isCanSearchTask(),
-											roleReq.isCanPurgeCase(), roleReq.isCanSuspendCase(),
-											roleReq.isCanParticipateCase(), roleReq.isCanSeeReports());
-			
-			sessionFactory.getCurrentSession().persist(roleMaster);
-			sessionFactory.getCurrentSession().persist(rolePrev);
-			roleResp.setResponseMsg("Success");
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-			roleResp.setResponseMsg("Failure");
-			return roleResp;
-		}
-		
-		return roleResp;
-	}
-	
-	
 	@SuppressWarnings("unchecked")
 	public NewUserResponse createNewUser(NewUserRequest userReq) {
 		
 		NewUserResponse userResp = new NewUserResponse();
 		userResp.setId(userReq.getId());
+		
+		String validity = validateNewUserRequest(userReq);	
+		if( !(validity.equalsIgnoreCase("VALID")) ) {
+			userResp.setResponseMsg(validity);
+			return userResp;
+		}
+		
+		
 		try {
 			List<UserAuth> userAuthList = sessionFactory.getCurrentSession()
 					.createQuery("from UserAuth where id.id = :var_id")
 			    	.setString("var_id", userReq.getId())
 			    	.list();
 			if(userAuthList.size() > 0) {
-				userResp.setResponseMsg("User Details Already Exists");
+				userResp.setResponseMsg("Failure: User Details Already Exists");
 				return userResp;
 			}
 			List<UserRole> userRoleList = sessionFactory.getCurrentSession()
@@ -83,10 +53,11 @@ public class ManageFacadeDaoImpl implements ManageFacadeDao {
 			    	.setString("var_id", userReq.getId())
 			    	.list();
 			if(userRoleList.size() > 0) {
-				userResp.setResponseMsg("User Role Details Already Exists");
+				userResp.setResponseMsg("Failure: User Role Details Already Exists");
 				return userResp;
 			}
 			
+			UserRole userRole = new UserRole(userReq.getId(), userReq.getRoleCde());
 			UserAuth userAuth = new UserAuth(userReq.getId(), userReq.getEmailAddress(), userReq.getPassword(),
 								userReq.getWorkflowRefUserid(), userReq.getIsActive(), userReq.getIsExpired(), 
 								userReq.getIsSuspended(), userReq.getIsAuthorizationOnly());
@@ -94,10 +65,8 @@ public class ManageFacadeDaoImpl implements ManageFacadeDao {
 			userAuth.setCreatedDate(currDate);
 			userAuth.setUpdatedDate(currDate);
 			
-			UserRole userRole = new UserRole(userReq.getId(), userReq.getRoleCde());
-			
-			sessionFactory.getCurrentSession().persist(userAuth);
 			sessionFactory.getCurrentSession().persist(userRole);
+			sessionFactory.getCurrentSession().persist(userAuth);
 			userResp.setResponseMsg("Success");
 			
 		} catch(Exception e) {
@@ -109,4 +78,45 @@ public class ManageFacadeDaoImpl implements ManageFacadeDao {
 		return userResp;
 	}
 	
+	// Function to validate New User Request
+	private String validateNewUserRequest(NewUserRequest userReq) {
+		String validMsg = "VALID";
+		
+		if(userReq == null) {
+			validMsg = "Failure: Empty Request";
+			return validMsg;
+		}
+		
+		if( (userReq.getId() == null) || (userReq.getId().equals("")) ) {
+			validMsg = "Failure: Empty User Id in request";
+			return validMsg;
+		}
+		
+		if( (userReq.getRoleCde() == null) || (userReq.getRoleCde().equals("")) ) {
+			validMsg = "Failure: Empty Role Code in request";
+			return validMsg;
+		}
+		
+		if( (userReq.getPassword() == null) || (userReq.getPassword().equals("")) ) {
+			validMsg = "Failure: Password cannot be empty in request";
+			return validMsg;
+		}
+		
+		if(userReq.getIsActive() && userReq.getIsExpired() && userReq.getIsSuspended()) {
+			validMsg = "Failure: User cannot be Active, Expired and Suspended at the same time.";
+			return validMsg;
+		}
+		
+		if( !(userReq.getIsActive() || userReq.getIsExpired() || userReq.getIsSuspended()) ) {
+			validMsg = "Failure: User has to be either Active, Expired or Suspended.";
+			return validMsg;
+		}
+			
+		if( !(userReq.getIsActive() ^ userReq.getIsExpired() ^ userReq.getIsSuspended()) ) {
+			validMsg = "Failure: User can be only Active / Expired / Suspended at a time.";
+			return validMsg;
+		}
+		
+		return validMsg;
+	}
 }

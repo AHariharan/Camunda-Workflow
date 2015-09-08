@@ -1,0 +1,31 @@
+{
+	"id": "77b9141b-268a-50d4-bdb2-44b80b406868",
+	"name": "CreateNewUserRequest",
+	"requests": [
+		{
+			"id": "4fc814a9-2c91-d1fd-74f8-4c552ab4a658",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/workflow-facadeservices/facaderestservice/createuser",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "77b9141b-268a-50d4-bdb2-44b80b406868",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/workflow-facadeservices/facaderestservice/createuser",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1441258020197,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"id\": \"3\",\n    \"roleCde\": \"ADMIN\",\n    \"emailAddress\": \"test@gmail.com\",\n    \"password\": \"th1s1sapwd\",\n    \"isActive\": true,\n    \"isExpired\": false,\n    \"isSuspended\": false,\n    \"isAuthorizationOnly\": false\n}"
+		}
+	],
+	"order": [
+		"4fc814a9-2c91-d1fd-74f8-4c552ab4a658"
+	],
+	"timestamp": 1441258020197
+}
